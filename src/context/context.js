@@ -4,10 +4,16 @@ const TabContext = createContext();
 
 export const TabProvider = ({children}) => {
     const [tab, setTab] = useState('news')
+    const [articleData, setArticleData] = useState({
+        data: {},
+        isArticle : false,
+        value: 'news'
+    })
 
     return (
         <TabContext.Provider value={{
-            tab, setTab}}>
+            tab, setTab,
+            articleData, setArticleData}}>
             {children}
         </TabContext.Provider>
     )

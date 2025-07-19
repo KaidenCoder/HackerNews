@@ -6,19 +6,27 @@ import New from './components/New';
 import Ask from './components/Ask';
 import Show from './components/Show';
 import Jobs from './components/Jobs';
+import Article from './components/child/article';
 
 function App() {
-  const {tab} = useTab()
+  const {tab, articleData} = useTab()
   return (
     <div className='main-container'>
       <section className='navbar-container'>
       <Navbar/>
       </section>
       <section className='content-container'>
-        {tab === 'news' && <New/>}
-        {tab === 'ask' && <Ask/>}
-        {tab === 'show' && <Show/>}
-        {tab === 'jobs' && <Jobs/>}
+        {articleData.isArticle ? 
+        <Article/>: 
+        <>
+          {tab === 'news' && <New/>}
+          {tab === 'ask' && <Ask/>}
+          {tab === 'show' && <Show/>}
+          {tab === 'jobs' && <Jobs/>}
+        </>
+        }
+        
+
       </section>
     </div>
   );

@@ -1,7 +1,10 @@
 import useApiHook from '../hooks/apiHook'
+import { FaClock, FaHandPointUp, FaRegNewspaper} from 'react-icons/fa';
+import { useTab } from '../context/context';
 
 export default function Ask(){
     const {newsMap, newsId, loading, count, setCount} = useApiHook()
+    const {articleData, setArticleData} = useTab()
     
         const currentNews = newsId.slice(count.start, count.end)
         .map(id => newsMap[id]).filter(Boolean)
@@ -39,21 +42,35 @@ export default function Ask(){
                 <h1>Ask</h1>
                 <section>
                     {loading ? "Loading..." :
-                    <div>
+                    <section>
+                        
                         <div>
                             <span>Posts {count.start} - {count.end} </span>
                             <button  disabled={count.start == 0} onClick={() => handlePrev()}>Prev</button>
                             <button disabled={count.end == newsId.length} onClick={() => handleNext()}>Next</button>
                         </div>
                         {currentNews.map((item,index) =>(
-                            <div key={index}>
-                                <h2>{item.title}</h2>
-                                <p>By {item.by} | {new Date(item.time * 1000).toLocaleDateString()}</p>
-                                <a href={item.url} target="_blank" rel="noopener noreferrer">Read more</a>
+                            <section className='news-section' key={index} 
+                            onClick={(() => setArticleData({
+                                data: item,
+                                isArticle: true,
+                                 value:'ask'
+                            }))}>
+                                <div className='post-icon'>
+                                <FaRegNewspaper />
                             </div>
+                            <div>      
+                                <h2>{item.title}</h2>
+                                <div className="news-post">
+                                    <p><FaHandPointUp /> {item.score} { item.score  > 1 ? `points` : `point`} </p>
+                                    <p>By <span style={{color: '#e8590c'}}>{item.by}</span></p>
+                                    <p><FaClock/> {Math.floor((Date.now() - item.time * 1000) / (1000 * 60 * 60 * 24))} days ago </p>
+                                </div>
+                            </div>
+                            </section>
                         ))}              
-                    </div>             
-                     }      
+                    </section>             
+                        }      
                 </section>
             </main>
         )

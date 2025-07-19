@@ -1,10 +1,11 @@
 import useApiHook from '../hooks/apiHook'
 import { FaClock, FaHandPointUp, FaRegNewspaper} from 'react-icons/fa';
-import Article from './child/article';
+import { useTab } from '../context/context';
 
 export default function New(){
 
     const {newsMap, newsId, loading, count, setCount} = useApiHook()
+    const {articleData, setArticleData} = useTab()
 
     const currentNews = newsId.slice(count.start, count.end)
     .map(id => newsMap[id]).filter(Boolean)
@@ -40,7 +41,7 @@ export default function New(){
 
     return (
         <main>
-            <h1>New</h1>
+            <h1>News</h1>
             <section>
                 {loading ? "Loading..." :
                 <section>
@@ -51,7 +52,12 @@ export default function New(){
                         <button disabled={count.end == newsId.length} onClick={() => handleNext()}>Next</button>
                     </div>
                     {currentNews.map((item,index) =>(
-                        <section className='news-section'key={index} onClick={(() => console.log(item))}>
+                        <section className='news-section' key={index} 
+                        onClick={(() => setArticleData({
+                            data: item,
+                            isArticle: true,
+                            value:'news'
+                        }))}>
                          <div className='post-icon'>
                             <FaRegNewspaper />
                         </div>
@@ -61,7 +67,6 @@ export default function New(){
                                 <p><FaHandPointUp /> {item.score} { item.score  > 1 ? `points` : `point`} </p>
                                 <p>By <span style={{color: '#e8590c'}}>{item.by}</span></p>
                                 <p><FaClock/> {Math.floor((Date.now() - item.time * 1000) / (1000 * 60 * 60 * 24))} days ago </p>
-                                <a href={item.url} target="_blank" rel="noopener noreferrer">Read more</a>
                             </div>
                         </div>
                         </section>
