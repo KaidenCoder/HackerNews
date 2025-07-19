@@ -36,3 +36,62 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-links {
+  list-style: none;;
+}
+
+.tab-active {
+  color: #e8590c;
+  background-color: #fff7ed;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 0 0 25px;
+}
+
+.navbar-header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+}
+.tab{
+  padding: 10px 5px;
+}
+
+.main-container {
+  display: flex;;
+}
+
+.navbar-container {
+  width: 20%;
+}
+
+.content-container {
+  width: 80%;
+}
+
+main {
+  padding: 20px;
+}
+
+.news-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.post-icon{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 2rem;
+}
+
+.news-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
