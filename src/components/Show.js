@@ -5,7 +5,7 @@ import { useTab } from '../context/context';
 export default function Show(){
 
     const {newsMap, newsId, loading, count, setCount} = useApiHook()
-    const {articleData, setArticleData} = useTab()
+    const {setArticleData} = useTab()
 
     const currentNews = newsId.slice(count.start, count.end)
     .map(id => newsMap[id]).filter(Boolean)

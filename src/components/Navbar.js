@@ -1,7 +1,7 @@
 import { useTab } from "../context/context"
 import { FaNewspaper, FaQuestion, FaEye, FaSuitcase} from 'react-icons/fa';
 export default function Navbar(){
-    const {tab, setTab, articleData, setArticleData} = useTab()
+    const {tab, setTab, setArticleData} = useTab()
     return (
         <nav className="navbar">
             <header className="navbar-header">
