@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Tech Stack
 React, Context API, React Hooks, CSS, HTML5
 
-[LIVE URL](https://kaidencoder.github.io/hacker-news)
+[LIVE URL](https://khaidemsandiphackernews.netlify.app/)
 
 ### HOME PAGE
 ![Hacker News Home Page](public/screenshots/hacker-news-homepage.png)
