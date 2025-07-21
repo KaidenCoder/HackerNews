@@ -55,7 +55,7 @@ export default function Show(){
                         onClick={(() => setArticleData({
                             data: item,
                             isArticle: true,
-                            value:'news'
+                            value:'show'
                         }))}>
                          <div className='post-icon'>
                             <FaRegNewspaper />

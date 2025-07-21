@@ -55,7 +55,7 @@ export default function Jobs(){
                         onClick={(() => setArticleData({
                             data: item,
                             isArticle: true,
-                            value:'news'
+                            value:'jobs'
                         }))}>
                          <div className='post-icon'>
                             <FaRegNewspaper />
