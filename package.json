@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --branch gh-pages --repo https://github.com/KaidenCoderGithub/hacker-news.git --message 'Deploy' --force"
   },
   "eslintConfig": {
     "extends": [

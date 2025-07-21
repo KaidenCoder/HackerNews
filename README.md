@@ -8,5 +8,5 @@ React, Context API, React Hooks, CSS, HTML5
 [LIVE URL](https://KaidenCodergithub.io/hacker-news)
 
 ### HOMEPAGE
-![Hacker News Home Page](./screenshots/hacker-news-homepage.png)
-![Hacker News Detail Page](./screenshots/hacker-news-detailpage.png)
+![Hacker News Home Page](public/screenshots/hacker-news-homepage.png)
+![Hacker News Detail Page](public/sscreenshots/hacker-news-detailpage.png)
