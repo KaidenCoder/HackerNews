@@ -37,7 +37,6 @@ export default function New(){
             })
         }
     }
-    console.log(currentNews)
 
     return (
         <main>
