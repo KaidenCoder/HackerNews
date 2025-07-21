@@ -46,8 +46,8 @@ export default function Ask(){
                         
                         <div>
                             <span>Posts {count.start} - {count.end} </span>
-                            <button  disabled={count.start == 0} onClick={() => handlePrev()}>Prev</button>
-                            <button disabled={count.end == newsId.length} onClick={() => handleNext()}>Next</button>
+                            <button  disabled={count.start === 0} onClick={() => handlePrev()}>Prev</button>
+                            <button disabled={count.end === newsId.length} onClick={() => handleNext()}>Next</button>
                         </div>
                         {currentNews.map((item,index) =>(
                             <section className='news-section' key={index} 
