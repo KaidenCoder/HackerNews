@@ -9,4 +9,4 @@ React, Context API, React Hooks, CSS, HTML5
 
 ### HOMEPAGE
 ![Hacker News Home Page](public/screenshots/hacker-news-homepage.png)
-![Hacker News Detail Page](public/sscreenshots/hacker-news-detailpage.png)
+![Hacker News Detail Page](public/screenshots/hacker-news-detailpage.png)
